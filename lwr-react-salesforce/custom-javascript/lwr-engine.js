@@ -1,2 +1,2 @@
 console.log('Test Rogerio - LWR Engine');
-alert('Test ');
+alert('Test inside of LWR-engine.js file from Static Resource');

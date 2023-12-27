@@ -1,8 +1,30 @@
 <template>
-  <h1>Hello World!</h1>
+  <lightning-card>
+    <h3 slot="title">Simple Javascript Loading</h3>
+    <div class="slds-p-horizontal_small">
+      <template lwc:if={contacts}>
+        <template for:each={contacts} for:item="contact">
+          <p key={contact.Id}>{contact.Name}</p>
+        </template>
+      </template>
+      <div id="idLibrary1" class="slds-p-horizontal_small idLibrary1" lwc:dom="manual"></div>
+    </div>
+    <div slot="footer">
+      <lightning-button
+        label="Load Contacts"
+        onclick={handleLoad}
+      ></lightning-button>
+    </div>
+  </lightning-card>
   <br />
-  <div>
-    {mainLWRStaticURL}
-  </div>
-  <button onclick={buttonClickEvent}>{buttonText}</button>
+  <lightning-card>
+    <h3 slot="title">Custom Library To Create a Button</h3>
+    <div id="idLibrary2" class="slds-p-horizontal_small idLibrary2" lwc:dom="manual"></div>
+    <div slot="footer">
+      <lightning-button
+        label="Load Contacts from ThirdParty Call Javascript"
+        onclick={handleLoad}
+      ></lightning-button>
+    </div>
+  </lightning-card>
 </template>
